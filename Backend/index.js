@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const multer = require("multer");
-
 const Connect = require("./middleware/dbConnect");
 const userRoutes = require("./Routes/myRoutes");
 const blogRoutes = require("./Routes/postRoutes");

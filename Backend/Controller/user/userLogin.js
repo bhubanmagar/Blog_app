@@ -30,6 +30,8 @@ const userLogin = async (req, res) => {
     email: email,
   });
 
+  console.log(getuserToken);
+
   //making acess token
   const accessToken = jwt.sign(
     {

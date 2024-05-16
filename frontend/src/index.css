@@ -110,3 +110,19 @@ div .text-container {
   display: flex;
   justify-content: center;
 }
+
+.pagination {
+  display: flex;
+  text-decoration: none;
+}
+
+.page-item {
+  margin: 5px;
+  list-style-type: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.active {
+  background-color: #95ffff;
+}

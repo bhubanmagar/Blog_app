@@ -4,10 +4,11 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { GrEdit } from "react-icons/gr";
 import { MdDeleteOutline } from "react-icons/md";
+
+//main view function starts........
 const ViewPage = () => {
   const getParams = useParams();
-  const [detail, setDetail] = useState({});
-  const [checkme, setCheckme] = useState(false);
+  const [detail, setDetail] = useState({}); //state to store post details
 
   //viewHandler function starts
   const viewHandler = async () => {
@@ -23,8 +24,6 @@ const ViewPage = () => {
   };
   //veiwHandler ends here
 
-  const hideShowicon = async () => {};
-
   // calling viewHandler just after loading document to render the Post content
   useEffect(() => {
     viewHandler(); //eslint-disable-next-line
@@ -36,13 +35,13 @@ const ViewPage = () => {
       {detail ? (
         <>
           <div className="hero">
-            <div className="view-container">
+            <div className="view-container" key={detail._id}>
               <div style={{ margin: "10px", padding: "8px" }}>
                 <div className="icons">
                   <GrEdit style={{ cursor: "pointer" }} />
                   <MdDeleteOutline style={{ cursor: "pointer" }} />
                 </div>
-                <div className="image-container" key={detail._id}>
+                <div className="image-container">
                   <img src={detail.image} alt="blog" />
                 </div>
                 <div className="text-container">

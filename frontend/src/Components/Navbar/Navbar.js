@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import "./NavStyle.css";
+const Cookies = require("js-cookie");
 
 const Navbar = () => {
   const navigate = useNavigate();
   const clicHandler = () => {
     localStorage.removeItem("token");
+    Cookies.remove("check");
     navigate("/");
   };
   return (
